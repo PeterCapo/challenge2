@@ -1,7 +1,7 @@
 challenge
 
 [![Coverage Status](https://coveralls.io/repos/github/PeterCapo/challenge2/badge.svg?branch=master)](https://coveralls.io/github/PeterCapo/challenge2?branch=master)
-
+[![Test Coverage](https://api.codeclimate.com/v1/badges/3ed8671c4de83bbb17d8/test_coverage)](https://codeclimate.com/github/PeterCapo/challenge2/test_coverage)
 
 
 API Endpoints
