@@ -6,6 +6,7 @@ CHALLENGE2
 
 
 API Endpoints
+
 EndPoint	Functionality
 
 GET /orders	Get all the orders.
