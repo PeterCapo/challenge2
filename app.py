@@ -25,6 +25,10 @@ def post_order():
    orders[str(new_index)] = [data['date'], data['description'], data['price'], data['status'], data['address'], data['deliveryTime']]
    return jsonify({'data': data}), 201
 
+@app.route('/api/v1/orders/<string:id>')
+def get_one_order(id):
+    return jsonify({'order':orders[id]})    
+
 
 
 if __name__ == '__main__':
