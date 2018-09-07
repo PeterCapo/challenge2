@@ -7,12 +7,12 @@ CHALLENGE2
 
 API Endpoints
 
-EndPoint	Functionality
+HTTP verb      EndPoint	         Functionality
 
-GET /orders	Get all the orders.
+GET           /api/v1/orders	   Get all the orders.
 
-GET /orders/	Fetch a specific order
+GET           /api/v1/orders/0	 Fetch a specific order
 
-POST /orders	Place a new order.
+POST          /api/v1/orders	    Place a new order.
 
-PUT /orders/	Update the status of an order.
+PUT          /api/v1/orders/	    Update the status of an order.
