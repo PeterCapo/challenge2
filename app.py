@@ -31,7 +31,6 @@ def get_one_order(id):
        
 @app.route('/api/v1/orders/<string:id>', methods=['PUT'])
 def  update_orders(id):
-    import pdb;pdb.set_trace()
     data = request.data
     data=data.decode("utf-8")
     data=ast.literal_eval(data)
