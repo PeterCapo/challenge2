@@ -12,7 +12,7 @@ app = Flask(__name__)
 orders = {}
 
 @app.route('/')
-def README():
+def index():
     return render_template('README.md')
 
 @app.route('/api/v1/orders')
