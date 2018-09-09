@@ -7,19 +7,14 @@ import ast
 
 app = Flask(__name__)
 
-
-
 orders = {}
-
-
 
 @app.route('/api/v1/orders')
 def get_all_orders():
     return jsonify({'orders':orders})
 
 @app.route('/api/v1/orders', methods=['POST'])
-def post_order():
-   
+def post_order():   
    data = request.data
    data=data.decode("utf-8")
    data=ast.literal_eval(data)
