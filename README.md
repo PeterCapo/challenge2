@@ -1,10 +1,11 @@
-CHALLENGE2
+
 [![Build Status](https://travis-ci.org/PeterCapo/challenge2.svg?branch=master)](https://travis-ci.org/PeterCapo/challenge2)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/441712ba837443e1bcf5983fbf8d9ef4)](https://app.codacy.com/app/PeterCapo/challenge2?utm_source=github.com&utm_medium=referral&utm_content=PeterCapo/challenge2&utm_campaign=Badge_Grade_Settings)
 [![Coverage Status](https://coveralls.io/repos/github/PeterCapo/challenge2/badge.svg)](https://coveralls.io/github/PeterCapo/challenge2)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3ed8671c4de83bbb17d8/maintainability)](https://codeclimate.com/github/PeterCapo/challenge2/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/3ed8671c4de83bbb17d8/test_coverage)](https://codeclimate.com/github/PeterCapo/challenge2/test_coverage)
 
+CHALLENGE2
 
 API Endpoints
 
