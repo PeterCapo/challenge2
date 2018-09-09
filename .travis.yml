@@ -1,25 +1,17 @@
 language: python
-
 python:
-
+  - "2.6"
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.5-dev"  # 3.5 development branch
+  - "3.6"
+  - "3.6-dev"  # 3.6 development branch
   - "3.7-dev"  # 3.7 development branch
 # command to install dependencies
-
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-
 install:
   - pip install -r requirements.txt
-
+# command to run tests
 script:
-  - pytest --cov=tests/
-
-after_script:
-  - coverage xml
-  - if [[ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_PYTHON_VERSION" == "3.6-dev" ]]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
-
-after_success:
-  - coveralls
-
+  - pytest
