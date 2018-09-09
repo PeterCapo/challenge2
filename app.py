@@ -11,6 +11,10 @@ app = Flask(__name__)
 
 orders = {}
 
+@app.route('/')
+def README():
+    return render_template('README.md')
+
 @app.route('/api/v1/orders')
 def get_all_orders():
     return jsonify({'orders':orders})
