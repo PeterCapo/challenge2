@@ -1,14 +1,9 @@
 from App.Tests.test_config import testClient
-import unittest
 import json
-from unittest import TestCase
 from App.api.v1.views import get_one_order
 
-
 new_order = {"address":"nairobi","date":13,"deliveryTime":1600,"description":"beef & stew","price":1400,"status":"ready"}
-
-
-        
+      
 def test_get_orders(testClient):
         response = testClient.get('/api/v1/orders')
         assert response.status_code == 200
