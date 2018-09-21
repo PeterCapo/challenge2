@@ -4,7 +4,6 @@ import json
 import requests
 import ast
 
-
 app = Flask(__name__)
 
 orders = {}
