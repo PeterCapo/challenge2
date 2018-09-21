@@ -19,10 +19,6 @@ script:
   - pytest 
   - coverage run --source=App.api.v1.views -m pytest && coverage report
 
-after success:
-  - coveralls
-  - coveralls xml
-
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT  
   
