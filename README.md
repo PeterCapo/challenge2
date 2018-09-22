@@ -3,18 +3,34 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/3ed8671c4de83bbb17d8/maintainability)](https://codeclimate.com/github/PeterCapo/challenge2/maintainability) 
 [![Coverage Status](https://coveralls.io/repos/github/PeterCapo/challenge2/badge.svg)](https://coveralls.io/github/PeterCapo/challenge2)
 
-
-
 CHALLENGE2
 
-API Endpoints
+Installation and Setup
 
-HTTP verb      EndPoint	         Functionality
+Clone the repository 
 
-GET           /api/v1/orders	   Get all the orders.
+Create a virtual environment
 
-GET           /api/v1/orders/0	 Fetch a specific order
+    virtualenv venv --python=python3.7
 
-POST          /api/v1/orders	    Place a new order.
+Activate virtual environment
 
-PUT          /api/v1/orders/	    Update the status of an order.
+    source venv/bin/activate
+    or for windows OS
+    venv\scripts\activate
+
+Install required Dependencies
+
+    pip install -r requirements.txt
+
+
+
+API Endpoints 
+
+| Method | Endpoint                        | Description                           |
+| ------ | ------------------------------- | ------------------------------------- |
+| POST   | /api/v1/orders                  | Place an order                        |
+| GET    | /api/v1/orders                  | Get all orders                        |
+| PUT    | /api/v1/orders/<{id}>           | Update order status                   |
+| GET    | /api/v1/orders/<{id}>           | Get a specific order                  |
+
