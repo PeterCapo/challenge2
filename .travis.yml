@@ -10,14 +10,19 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install coveralls
+  - pip install -e . --use-mirrors
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  - py.test App/Tests/test_Orders.py --cov=App
+  - py.test coveralls/test_Orders.py --doctest-modules --pep8 coveralls -v --cov coveralls --cov-report term-missing
 script:
   - pytest 
   - coverage run --source=App.api.v1.views -m pytest && coverage report
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT  
+after_success:
+  - coveralls  
