@@ -10,7 +10,7 @@ install:
 
 script:
   - pytest 
-  - coverage run --source=App.api.v1.views -m pytest && coverage report
+  - coverage run --source=app.api.v1.views -m pytest && coverage report
 
 after_success:
   - coveralls  

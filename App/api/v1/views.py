@@ -1,34 +1,48 @@
+from flask_restful import Resource, reqparse
 from flask import Flask, request
-from flask import jsonify
-import json
-import requests
-import ast
 
-app = Flask(__name__)
 
-orders = {}
+from .model import Orders, orders
 
-@app.route('/api/v1/orders')
-def get_all_orders():
-    return jsonify({'orders':orders})
 
-@app.route('/api/v1/orders', methods=['POST'])
-def post_order():
-   data = request.data
-   data=data.decode("utf-8")
-   data=ast.literal_eval(data)
-   new_index = len(orders) 
-   orders[str(new_index)] = [data['date'], data['description'], data['price'], data['status'], data['address'], data['deliveryTime']]
-   return jsonify({'data': data}), 201
+class Order(Resource):
+    parser = reqparse.RequestParser()
+    parser.add_argument('price',
+    type=float, required=True,
+    help="This field cannot be left blank!")
 
-@app.route('/api/v1/orders/<string:id>')
-def get_one_order(id):
-    return jsonify({'order':orders[id]}) 
-       
-@app.route('/api/v1/orders/<string:id>', methods=['PUT'])
-def  update_orders(id):
-    data = request.data
-    data=data.decode("utf-8")
-    data=ast.literal_eval(data)
-    orders[id] = [data['date'], data['description'], data['price'], data['status'], data['address'], data['deliveryTime']]
-    return jsonify({'data': data}), 202
+    def get(self, name):
+        return {'order': next(filter(lambda x:
+    x['name'] == name, orders), None)}, 200
+
+    def post(self, name):
+        if next(filter(lambda x: x['name'] == name, orders), None) is not None:
+            return {'message':
+            "An order with name'{}' already exists.".format(name)}
+
+        data = Order.parser.parse_args()
+
+        order = {'name': name, 'price': data['price']}
+        orders.append(order)
+        return order, 201
+
+    def delete(self, name):
+        global orders
+        orders = list(filter(lambda x: x['name'] != name, orders))
+        return {'message': 'Orders deleted'}
+
+    def put(self, name):
+        data = Order.parser.parse_args()
+        order = next(filter(lambda x: x['name'] == name, orders), None)
+        if order is None:
+            order = {'name': name, 'price': data['price']}
+            orders.append(order)
+        else:
+            order.update(data)
+        return order
+
+
+class OrderList(Resource):
+
+    def get(self):
+        return {'orders': orders}

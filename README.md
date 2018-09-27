@@ -34,3 +34,7 @@ API Endpoints
 | PUT    | /api/v1/orders/<{id}>           | Update order status                   |
 | GET    | /api/v1/orders/<{id}>           | Get a specific order                  |
 
+Test on Postman 
+
+Run Test
+- nosetests

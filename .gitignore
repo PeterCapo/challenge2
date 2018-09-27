@@ -1,7 +1,10 @@
-venv/
-__pycache__
-.vscode
-.pytest_cache
-coverage.xml
+__pycache__/
+.vscode/
 .coverage
-.coveralls.yml
+.coverage.*
+.pytest_cache/
+.env
+.venv/
+venv/
+
+
