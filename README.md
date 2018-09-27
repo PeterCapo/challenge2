@@ -24,17 +24,17 @@ Install required Dependencies
     pip install -r requirements.txt
 
 
-
+Test on Postman 
 API Endpoints 
 
 | Method | Endpoint                        | Description                           |
 | ------ | ------------------------------- | ------------------------------------- |
 | POST   | /api/v1/orders                  | Place an order                        |
 | GET    | /api/v1/orders                  | Get all orders                        |
-| PUT    | /api/v1/orders/<{id}>           | Update order status                   |
-| GET    | /api/v1/orders/<{id}>           | Get a specific order                  |
+| PUT    | /api/v1/orders/<string:name>    | Update order status                   |
+| GET    | /api/v1/orders/<string:name>    | Get a specific order                  |
 
-Test on Postman 
+
 
 Run Test
 - nosetests
