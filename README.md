@@ -31,8 +31,8 @@ API Endpoints
 | ------ | ------------------------------- | ------------------------------------- |
 | POST   | /api/v1/orders                  | Place an order                        |
 | GET    | /api/v1/orders                  | Get all orders                        |
-| PUT    | /api/v1/orders/<string:name>    | Update order status                   |
-| GET    | /api/v1/orders/<string:name>    | Get a specific order                  |
+| PUT    | /api/v1/order/<string:name>    | Update order status                   |
+| GET    | /api/v1/order/<string:name>    | Get a specific order                  |
 
 
 
