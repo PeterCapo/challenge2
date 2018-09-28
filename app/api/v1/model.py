@@ -3,7 +3,7 @@ orders = []
 class Orders:
 
     def __init__(self, name=None, price=None,
-                 description=None, status="Pending"):
+                 description=None, status="Ready"):
         self.id = len(orders)+1
         self.name = name
         self.price = price
