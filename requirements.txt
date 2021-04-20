@@ -33,7 +33,7 @@ pathlib2==2.3.2
 pipenv==2018.7.1
 pluggy==0.7.1
 psycopg2==2.7.5
-py==1.6.0
+py==1.10.0
 PyJWT==1.4.2
 pylint==2.1.1
 pytest==3.8.0
